@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        var name, itemNeedeed, numItems;
+
+        document.write("<h1>Welcome to my store</h1>");
+        
+        name = window.prompt("Please enter your name", "Adel");
+        itemNeeded = window.prompt("Please enter the item you want", "");
+        numItems = window.prompt("Please enter the quantity " + itemNeeded + "(s) you want", "");
+
+        if (isNaN(numItems) || numItems <= 0 || numItems > 100) {
+            document.write("<h1>Error: Invalid order. Please try again later/h1>");
+        } else {
+            document.write("<h1>You have ordered " + numItems + " " + itemNeeded + "(s).</h1>");
+            
+            var now = new Date();
+            now.setDate(now.getDate() + 7); // Add 7 days to current date
+            
+            document.write("<h2>Your order will arrive by " + now.toDateString() + ".</h2>");
+            document.write("<h2>Thank you for your order, " + name + "!</h2>");
+        }
+    </script>
+</head>
+<body>
+    <p>Refresh the page to place a new order.</p>
+</body>
+</html>
